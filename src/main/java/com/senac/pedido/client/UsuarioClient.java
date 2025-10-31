@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 //Gustavo
 @FeignClient(name = "Usuario", url = "10.136.36.217:8080", path= "/api/usuario")
 public interface UsuarioClient {
-    @GetMapping(value = "/{usuario}/json/")
+    @GetMapping(value = "/pedidos/{id}")
     public ResponseEntity<PedidoResponse> buscarPorUsuario(@PathVariable("usuario") String usuario);
+
+
 }
