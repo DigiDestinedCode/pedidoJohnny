@@ -35,7 +35,7 @@ public class PedidoService {
         return pedidoResponse;
     }
 
-    public Pedido listaPorUsuarioId(Integer usuarioId) {
+    public PedidoResponse buscarPedidoPorUsuario(Integer usuarioId) {
         return pedidoRepository.buscaPedidoPorUsuario(usuarioId).orElse(null);
     }
 }

@@ -1,18 +1,26 @@
 package com.senac.pedido.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pedido")
 public class Pedido {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pedido_id")
     private Integer id;
+    @Column(name = "pedido_data")
     private LocalDate data;
+    @Column(name = "pedido_valor_total")
     private BigDecimal valor_total;
+    @Column(name = "pedido_status")
     private Integer status;
+    @Column(name = "usuario_id")
 
     private Integer usuarioId;
 
